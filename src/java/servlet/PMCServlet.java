@@ -6,6 +6,7 @@
 package servlet;
 
 import Model.*;
+import PrintCompanyService.OrderService;
 import PrintCompanyService.*;
 import dao.*;
 import java.io.IOException;
@@ -21,6 +22,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.rowset.serial.SerialBlob;
 
 /**
  *
@@ -46,7 +48,7 @@ public class PMCServlet extends HttpServlet {
     MarketingAgentDao mADao;
     MarketingAgentService mAServc; 
     orderDao oDao;
-    orderService oServc;
+    OrderService oServc;
     String jdbcUserName;
     String jdbcPassword;
     String jdbcURL;
@@ -63,7 +65,7 @@ public class PMCServlet extends HttpServlet {
         mADao = new MarketingAgentDao(jdbcURL, jdbcUserName, jdbcPassword);
         mAServc = new MarketingAgentService();
         oDao = new orderDao(jdbcURL, jdbcUserName, jdbcPassword);
-        oServc = new orderService();
+        oServc = new OrderService();
     }
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
@@ -498,7 +500,7 @@ private void showEditOrder(HttpServletRequest request, HttpServletResponse respo
         }
     }
 private void updateOrder(HttpServletRequest request, HttpServletResponse response) 
-            throws IOException, ServletException{
+            throws IOException, ServletException, SQLException{
     int id = Integer.parseInt(request.getParameter("id"));
     int agentId = Integer.parseInt(request.getParameter("AgentId"));
         int clientId = Integer.parseInt(request.getParameter("FName"));
@@ -511,7 +513,7 @@ private void updateOrder(HttpServletRequest request, HttpServletResponse respons
         Boolean flyerArtApprovl = Boolean.parseBoolean(request.getParameter("ONum"));
         Boolean paymentRecvd = Boolean.parseBoolean(request.getParameter("CNum"));
         byte[] img = request.getParameter("Email").getBytes();
-        Blob flyerImg = img;
+        Blob flyerImg = new SerialBlob(img);
     
     Order oObj = new Order(agentId, clientId, flyerQuantity, personalCopies, flyerLayout, paymentInfo, invoiceNum, comments, flyerArtApprovl, paymentRecvd, flyerImg);
     
