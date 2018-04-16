@@ -58,7 +58,7 @@ a {
     text-decoration: none
 }
 
-.tableEdited {
+.tableEdited, #loginForm {
     margin: 0 auto;
     width: 60%
 }
