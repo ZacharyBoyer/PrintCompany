@@ -1,0 +1,79 @@
+/* 
+    Created on : 16.04.2018, 16:06:12
+    Author     : Pavel Kirillov
+*/
+
+/* Material design button classes */
+.button {
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 8px;
+    border: none;
+    background: transparent;
+    text-transform: uppercase;
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+    border-radius: 3px
+}
+
+.button:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+}
+
+/* Material design ripple effect classes */
+.ripple {
+    background-position: center;
+    transition: all 1s cubic-bezier(.25,.8,.25,1)
+}
+
+.ripple:hover {
+    background: #EEE radial-gradient(circle, transparent 1%, #EEE 1%) center/15000%
+}
+
+.ripple:active {
+    background-color: #FFF;
+    background-size: 100%;
+    transition: background 0s
+}
+
+/* Material design input field */
+.inputField {
+    border: none;
+    border: 1px solid #000;
+    background-color: transparent;
+    min-height: 32px;
+    width: 100%;
+    border-radius: 3px
+}
+
+/* The rest of CSS */
+body {
+    background-color: #DDD;
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none
+}
+
+.tableEdited {
+    margin: 0 auto;
+    width: 60%
+}
+
+.h1TableHeader {
+    margin: 10% auto 0;
+    width: 60%
+}
+
+.tableEdited .button {
+    width: 100%;
+    background-color: #CCC
+}
+
+#tableClientsList {
+    margin: 0 auto;
+    width: 97.5%
+}
