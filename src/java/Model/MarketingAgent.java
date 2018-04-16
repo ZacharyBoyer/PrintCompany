@@ -10,12 +10,13 @@ package Model;
  * @author Zach
  */
 public class MarketingAgent {
+
     int id;
     String FirstName, LastName, Email, UserName, Password, phoneNumber;
 
-        public MarketingAgent(){      
+    public MarketingAgent() {
     }
-    
+
     public MarketingAgent(int id, String FirstName, String LastName, String Email, String UserName, String Password, String phoneNumber) {
         this.id = id;
         this.FirstName = FirstName;
@@ -80,5 +81,5 @@ public class MarketingAgent {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }   
+    }
 }

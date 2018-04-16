@@ -15,35 +15,35 @@ import java.util.ArrayList;
  * @author Zach
  */
 public class locationService {
-    
-    public ArrayList<Location> viewAllLocations(locationDao lDao) throws SQLException{
-    ArrayList<Location> locList = new ArrayList();
-    locList = lDao.viewAllLocations();
-    return locList;
+
+    public ArrayList<Location> viewAllLocations(locationDao lDao) throws SQLException {
+        ArrayList<Location> locList = new ArrayList();
+        locList = lDao.viewAllLocations();
+        return locList;
     }
-    
-    public Location viewLocation(int id, locationDao lDao ) throws SQLException{
+
+    public Location viewLocation(int id, locationDao lDao) throws SQLException {
         Location loc = lDao.viewLocation(id);
-        return loc;        
+        return loc;
     }
-    
-    public boolean updateLocation(Location loc, locationDao lDao) throws SQLException{
+
+    public boolean updateLocation(Location loc, locationDao lDao) throws SQLException {
         boolean res = lDao.updateLocation(loc);
         return res;
     }
-    
-    public int addLocation(String name, int Cap, locationDao lDao){
-        int res = 0; 
-           Location loc = new Location();
 
-            loc.setLocationName(name);
-            loc.setDistrCap(Cap);
-            res = lDao.addLocation(loc);
-    
-        return res;               
+    public int addLocation(String name, int Cap, locationDao lDao) {
+        int res = 0;
+        Location loc = new Location();
+
+        loc.setLocationName(name);
+        loc.setDistrCap(Cap);
+        res = lDao.addLocation(loc);
+
+        return res;
     }
-    
-    public void deleteLocation(int id, locationDao lDao) throws SQLException{
+
+    public void deleteLocation(int id, locationDao lDao) throws SQLException {
         lDao.deleteLocation(id);
     }
 }

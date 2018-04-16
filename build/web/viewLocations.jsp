@@ -1,7 +1,7 @@
 <%-- 
     Document   : viewLocations.jsp
     Created on : Apr 11, 2018, 1:39:48 PM
-    Author     : Zach
+    Authors    : Zachary Boyer, Pavel Kirillov
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,33 +12,35 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>View Locations</title>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
     </head>
     <body>
-         <a href="newLoc">Add new Location</a>
-         <h1>List of locations</h1>
-            <table cellpadding="5" border="1">
-                <thead>
-                    <th>id</th>
-                    <th>name</th>
-                    <th>cap</th>
-                </thead>
-                 <tbody>
+    <center><br><a class="button ripple" href="newLoc">Add New Location</a></center>
+    <h1 class="h1TableHeader">List of locations</h1>
+    <table class="tableEdited" cellpadding="5" border="1">
+        <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Cap</th>
+    </thead>
+    <tbody>
         <c:forEach var="location" items="${locList}">
-                    <tr>
-                        <td><c:out value="${location.id}"/></td>
-                        <td><c:out value="${location.locationName}"/></td>
-                        <td><c:out value="${location.distrCap}"/></td>
-                         <td><a href="editLoc?id=<c:out value='${location.id}'/>">
-                                Edit
-                            </a>
-                                &nbsp;&nbsp;&nbsp;
-                            <a href="deleteLoc?id=<c:out value='${location.id}'/>">
-                                Delete
-                            </a>
-</tr>
+            <tr>
+                <td><c:out value="${location.id}"/></td>
+                <td><c:out value="${location.locationName}"/></td>
+                <td><c:out value="${location.distrCap}"/></td>
+                <td>
+                    <a class="button ripple" style="margin-right: 16px" href="editLoc?id=<c:out value='${location.id}'/>">
+                        Edit
+                    </a>
+                    <a class="button ripple" href="deleteLoc?id=<c:out value='${location.id}'/>">
+                        Delete
+                    </a>
+                </td>
+            </tr>
         </c:forEach>
-</tbody>
-    </table>
+    </tbody>
+</table>
 </body>
 </html>

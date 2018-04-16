@@ -10,43 +10,45 @@ package Model;
  * @author Zach
  */
 public class Client {
+
     int id, AgentId;
     String FirstName, LastName, StreetNumber, StreetName, City, Province, PostalCode, TelOffice, TelCell, Email, Company, CompanyType;
-    
-    public Client(){
-        
+
+    public Client() {
+
     }
-    public Client(int id, int AgentId, String FirstName, String LastName, String StreetNumber, String StreetName, String City, String Province, String PostalCode, String TelOffice, String TelCell, String Email, String Company, String CompanyType){
-      this.id = id;
-      this.AgentId =  AgentId;
-      this.FirstName = FirstName;
-      this.LastName = LastName;
-      this.StreetNumber = StreetNumber;
-      this.StreetName = StreetName;
-      this.City = City;
-      this.Province = Province;
-      this.PostalCode = PostalCode;
-      this.TelOffice = TelOffice; 
-      this.TelCell = TelCell;
-      this.Email = Email;
-      this.Company = Company;
-      this.CompanyType = CompanyType;
+
+    public Client(int id, int AgentId, String FirstName, String LastName, String StreetNumber, String StreetName, String City, String Province, String PostalCode, String TelOffice, String TelCell, String Email, String Company, String CompanyType) {
+        this.id = id;
+        this.AgentId = AgentId;
+        this.FirstName = FirstName;
+        this.LastName = LastName;
+        this.StreetNumber = StreetNumber;
+        this.StreetName = StreetName;
+        this.City = City;
+        this.Province = Province;
+        this.PostalCode = PostalCode;
+        this.TelOffice = TelOffice;
+        this.TelCell = TelCell;
+        this.Email = Email;
+        this.Company = Company;
+        this.CompanyType = CompanyType;
     }
-    
-    public Client(int AgentId, String FirstName, String LastName, String StreetNumber, String StreetName, String City, String Province, String PostalCode, String TelOffice, String TelCell, String Email, String Company, String CompanyType){
-      this.AgentId =  AgentId;
-      this.FirstName = FirstName;
-      this.LastName = LastName;
-      this.StreetNumber = StreetNumber;
-      this.StreetName = StreetName;
-      this.City = City;
-      this.Province = Province;
-      this.PostalCode = PostalCode;
-      this.TelOffice = TelOffice; 
-      this.TelCell = TelCell;
-      this.Email = Email;
-      this.Company = Company;
-      this.CompanyType = CompanyType;
+
+    public Client(int AgentId, String FirstName, String LastName, String StreetNumber, String StreetName, String City, String Province, String PostalCode, String TelOffice, String TelCell, String Email, String Company, String CompanyType) {
+        this.AgentId = AgentId;
+        this.FirstName = FirstName;
+        this.LastName = LastName;
+        this.StreetNumber = StreetNumber;
+        this.StreetName = StreetName;
+        this.City = City;
+        this.Province = Province;
+        this.PostalCode = PostalCode;
+        this.TelOffice = TelOffice;
+        this.TelCell = TelCell;
+        this.Email = Email;
+        this.Company = Company;
+        this.CompanyType = CompanyType;
     }
 
     public int getId() {
@@ -112,7 +114,7 @@ public class Client {
     public void setProvince(String Province) {
         this.Province = Province;
     }
-    
+
     public String getPostalCode() {
         return PostalCode;
     }
@@ -120,6 +122,7 @@ public class Client {
     public void setPostalCode(String PostalCode) {
         this.PostalCode = PostalCode;
     }
+
     public String getTelOffice() {
         return TelOffice;
     }

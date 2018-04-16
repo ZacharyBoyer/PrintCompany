@@ -12,6 +12,7 @@ import java.sql.Blob;
  * @author Zach
  */
 public class Order {
+
     int id, agentId, clientId, flyerQuantity, personalCopies;
     String flyerLayout, paymentInfo, invoiceNum, comments;
     Boolean flyerArtApprovl, paymentRecvd;
@@ -30,8 +31,9 @@ public class Order {
         this.paymentRecvd = paymentRecvd;
         this.flyerImg = flyerImg;
     }
-    public Order(){
-        
+
+    public Order() {
+
     }
 
     public int getId() {

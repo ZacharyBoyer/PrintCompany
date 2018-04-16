@@ -10,15 +10,18 @@ package Model;
  * @author Zach
  */
 public class Location {
+
     int id, distrCap;
     String locationName;
-    
-    public Location(){
+
+    public Location() {
     }
-    public Location(int Id){
+
+    public Location(int Id) {
         id = Id;
     }
-    public Location(int ID, String Name, int CAP){
+
+    public Location(int ID, String Name, int CAP) {
         id = ID;
         locationName = Name;
         distrCap = CAP;
