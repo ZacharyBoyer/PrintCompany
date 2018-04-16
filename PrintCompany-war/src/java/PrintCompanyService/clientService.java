@@ -22,7 +22,7 @@ public class clientService {
         int  res = 0;
         Client clientObj = new Client();
         //Add agent id null check
-        if(FirstName != null && LastName != null && StreetNumber != null && StreetName != null && City != null &&  Province != null &&  
+        if (FirstName != null && LastName != null && StreetNumber != null && StreetName != null && City != null &&  Province != null &&  
                 PostalCode != null &&  TelOffice != null && TelCell != null && Email != null && Company != null && CompanyType != null)
         {
            clientObj.setAgentId(AgentId);
